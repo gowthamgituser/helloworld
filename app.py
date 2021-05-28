@@ -23,6 +23,7 @@ def palindrome():
                         flag = 1
                         #fact = len(v1)
                         data = v1[j]
+                        data = data.lower()
                         for i in range(0, int(len(data)/2)):
                             if data[i] != data[len(data) -i - 1]:
                                 flag = 0
