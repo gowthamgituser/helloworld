@@ -17,7 +17,7 @@ def palindrome():
             if 'value' in request_data:
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
-                    return ''' value is: {}'''.format(value)
+                    return ''' value is: {}'''.format(v1)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
