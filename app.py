@@ -11,12 +11,19 @@ def index():
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
-        value = request.get_json()
-        v1 = value['value']
-        if v1 == []:
-            return '''Array Cannot be empty'''
-        else:
-            return ''' vallues {}.'''.format(v1[3])
+        request_data = request.get_json()
+
+        value = None
+        #v1 = value['value']
+        if 'value' in request_data:
+            if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
+                v1 = request_data['value']
+            else:
+                return '''Array cannot be empty'''
+            #if v1 == []:
+            #return '''Array Cannot be empty'''
+        #else:
+            #return ''' vallues {}.'''.format(v1[3])
         #for i in range(0, int(len(value) / 2)):
             #if value[i] != value[len(value) - i - 1]:
                 #return "Not a palindrome"
