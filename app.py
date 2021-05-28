@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
 
@@ -27,4 +27,5 @@ def check():
 
 
 if __name__ == '__main__':
+    app.secret_key = 'super secret key'
     app.run()
