@@ -11,10 +11,6 @@ def index():
 
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
-    if 'count' in session:
-        session['count'] = session.get('count') + 1
-    else:
-        session['count'] = 1
     if request.method == 'POST':
         request_data = request.get_json()
         value = None
