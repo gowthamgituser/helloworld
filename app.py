@@ -21,14 +21,16 @@ def palindrome():
                     v1 = request_data['value']
                     #return ''' value is: {}'''.format(v1)
                     for j in range(0, len(v1)):
-                        fact = len(v1)
+                        #fact = len(v1)
                         data = v1[j]
                         for i in range(0, int(len(data)/2)):
                             if data[i] != data[len(data) -i - 1]:
                                 count_not_palindrome += 1
                         count_palindrome += 1
-                if count_palindrome == 0:
-                    return '''No palindrome'''
+                    if count_palindrome == 0:
+                        return '''No palindrome found'''
+                    else:
+                        return '''Palindrome found: {}'''.format(count_palindrome)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
