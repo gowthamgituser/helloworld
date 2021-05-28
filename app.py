@@ -1,8 +1,7 @@
 import sys
 
 from flask import Flask, render_template, request, session
-from urllib.request import urlopen
-import json
+
 
 app = Flask(__name__)
 
@@ -13,6 +12,13 @@ def index():
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
+        #counting session
+
+        if 'count' in session:
+            session['count'] = session.get('count') + 1
+        else:
+            session['count'] = 1
+
         request_data = request.get_json()
         value = None
         if request_data:
@@ -36,18 +42,14 @@ def palindrome():
                     if cnt == 0:
                         return '''No Palindromes found'''
                     else:
-                        print("Palindrome")
-                        return '''{} Palindrome strings@indexes{}'''.format(cnt,indexes)
+                        return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
-            #if v1 == []:
-            #return '''Array Cannot be empty'''
-        #else:
-            #return ''' vallues {}.'''.format(v1[3])
-        #for i in range(0, int(len(value) / 2)):
-            #if value[i] != value[len(value) - i - 1]:
-                #return "Not a palindrome"
-        #return '''palindrome: {}'''.format(value)
+
+@app.route('/check-count', methods=['GET'])
+def get_value():
+    return "Total visit: {}".format(session.get('count'))
+
 
 @app.route('/')
 def check():
