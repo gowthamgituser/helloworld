@@ -15,22 +15,23 @@ def palindrome():
         value = None
         if request_data:
             if 'value' in request_data:
-                count_not_palindrome = 0
-                count_palindrome = 0
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
+                    cnt = 0
                     #return ''' value is: {}'''.format(v1)
                     for j in range(0, len(v1)):
+                        flag = 1
                         #fact = len(v1)
                         data = v1[j]
                         for i in range(0, int(len(data)/2)):
                             if data[i] != data[len(data) -i - 1]:
-                                count_not_palindrome += 1
-                        count_palindrome += 1
-                    if count_palindrome == 0:
-                        return '''No palindrome found'''
+                                flag = 0
+                        if flag == 1:
+                            cnt += 1
+                    if cnt == 0:
+                        return '''No Palindrome found'''
                     else:
-                        return '''Palindrome found: {}'''.format(count_palindrome)
+                        return '''{}'''.format(cnt)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
