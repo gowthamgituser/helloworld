@@ -22,8 +22,8 @@ def palindrome():
                         data = v1[i]
                         for j in range(0, int(len(data)/2)):
                             if data[j] != data[len(data) -j - 1]:
-                                return '''palindrome'''
-                        return '''Palindrome'''
+                                print("Not a palindrome")
+                        print("palindrome")
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
