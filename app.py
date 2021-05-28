@@ -16,7 +16,7 @@ def palindrome():
         if v1 == []:
             return '''Array Cannot be empty'''
         else:
-            return ''' vallues {}.''',format(v1[3])
+            return ''' vallues {}.'''.format(v1[3])
         #for i in range(0, int(len(value) / 2)):
             #if value[i] != value[len(value) - i - 1]:
                 #return "Not a palindrome"
