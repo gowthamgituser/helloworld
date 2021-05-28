@@ -21,7 +21,7 @@ def palindrome():
                     for i in range(0, len(v1)-1 ):
                         data = v1[i]
                         for j in range(0, int(len(data)/2)):
-                            if data[j] != data[len(value) -j - 1]:
+                            if data[j] != data[len(data) -j - 1]:
                                 return '''palindrome'''
                         return '''Palindrome'''
                 else:
