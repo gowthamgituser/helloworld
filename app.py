@@ -32,6 +32,11 @@ def palindrome():
                         if flag == 1:
                             cnt += 1
                             indexes.append(j)
+                    if 'count' in session:
+                        session['count'] = session.get('count') + 1
+                    else:
+                        session['count'] = 1
+                    print(session.get('count'))
                     if cnt == 0:
                         return '''No Palindromes found'''
                     else:
