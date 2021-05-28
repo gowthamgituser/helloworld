@@ -1,3 +1,5 @@
+import sys
+
 from flask import Flask, render_template, request, session
 from urllib.request import urlopen
 import json
@@ -34,7 +36,8 @@ def palindrome():
                     if cnt == 0:
                         return '''No Palindromes found'''
                     else:
-                        return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
+                        print(indexes, sep=",", file=sys.stderr)
+                        return '''{} Palindrome strings@indexes{}'''.format(cnt,indexes)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
