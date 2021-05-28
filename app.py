@@ -36,7 +36,7 @@ def palindrome():
                     if cnt == 0:
                         return '''No Palindromes found'''
                     else:
-                        print(indexes, sep=",", file=sys.stderr)
+                        print("Palindrome")
                         return '''{} Palindrome strings@indexes{}'''.format(cnt,indexes)
                 else:
                     return '''Array cannot be empty'''
