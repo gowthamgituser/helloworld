@@ -18,6 +18,7 @@ def palindrome():
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
                     cnt = 0
+                    indexes = []
                     #return ''' value is: {}'''.format(v1)
                     for j in range(0, len(v1)):
                         flag = 1
@@ -29,10 +30,11 @@ def palindrome():
                                 flag = 0
                         if flag == 1:
                             cnt += 1
+                            indexes.append(j)
                     if cnt == 0:
-                        return '''No Palindrome found'''
+                        return '''No Palindromes found'''
                     else:
-                        return '''{}'''.format(cnt)
+                        return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
