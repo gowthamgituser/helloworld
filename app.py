@@ -19,11 +19,12 @@ def palindrome():
                     v1 = request_data['value']
                     #return ''' value is: {}'''.format(v1)
                     #for i in range(0, len(v1)-1 ):
+                    fact = len(v1)-1
                     data = v1[0]
                     for i in range(0, int(len(data)/2)):
                         if data[i] != data[len(data) -i - 1]:
                             return "Not a palindrome"
-                    return '''palindrome: {}'''.format(data)
+                    return '''palindrome: {}'''.format(fact)
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
