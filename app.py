@@ -13,7 +13,7 @@ def palindrome():
     if request.method == 'POST':
         value = request.get_json()
         v1 = value['value']
-        if v1 == "":
+        if v1 == 0:
             return '''Array Cannot be empty'''
         else:
             return ''' <h1>vallues</h1>'''
