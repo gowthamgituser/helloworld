@@ -17,7 +17,7 @@ def count():
         session['count'] = 1
 
 
-@app.route('/check-palindrome', methods=['POST'])
+@app.route('/check-palindrome', methods=['GET','POST'])
 def palindrome():
     if request.method == 'POST':
         count()
