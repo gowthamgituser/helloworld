@@ -10,10 +10,11 @@ def index():
 def palindrome():
     if request.method == 'POST':
         value = request.args.get('value')
-        for i in range(0, int(len(value) / 2)):
-            if value[i] != value[len(value) - i - 1]:
-                return "Not a palindrome"
-        return '''palindrome: {}'''.format(value)
+        return ''' val:{}'''.format(value)
+        #for i in range(0, int(len(value) / 2)):
+            #if value[i] != value[len(value) - i - 1]:
+                #return "Not a palindrome"
+        #return '''palindrome: {}'''.format(value)
 
 @app.route('/')
 def check():
