@@ -13,8 +13,10 @@ def palindrome():
     if request.method == 'POST':
         value = request.get_json()
         v1 = value['value']
-
-        return ''' val:{}'''.format(v1[0])
+        if v1 == []:
+            return ''' <h3>Empty</h3>'''
+        else:
+            return ''' <h1>vallues</h1>'''
         #for i in range(0, int(len(value) / 2)):
             #if value[i] != value[len(value) - i - 1]:
                 #return "Not a palindrome"
