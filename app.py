@@ -23,7 +23,7 @@ def palindrome():
                         for j in range(0, int(len(data)/2)):
                             if data[j] != data[len(value) -j - 1]:
                                 return '''palindrome'''
-                    return '''Palindrome'''
+                        return '''Palindrome'''
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
