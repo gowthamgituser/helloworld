@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, session
+from urllib.request import urlopen
+import json
 
 app = Flask(__name__)
 
@@ -9,8 +11,9 @@ def index():
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
-        value = request.args.get('value')
-        return ''' val:{}'''.format(value)
+        value = request.get_json()
+        v1 = value['values'][0]
+        return ''' val:{}'''.format(v1)
         #for i in range(0, int(len(value) / 2)):
             #if value[i] != value[len(value) - i - 1]:
                 #return "Not a palindrome"
