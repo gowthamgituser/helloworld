@@ -12,14 +12,14 @@ def index():
 def palindrome():
     if request.method == 'POST':
         request_data = request.get_json()
-
         value = None
-        #v1 = value['value']
-        if 'value' in request_data:
-            if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
-                v1 = request_data['value']
-            else:
-                return '''Array cannot be empty'''
+        if request_data:
+            if 'value' in request_data:
+                if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
+                    v1 = request_data['value']
+                    return ''' value is: {}'''.format(value)
+                else:
+                    return '''Array cannot be empty'''
             #if v1 == []:
             #return '''Array Cannot be empty'''
         #else:
