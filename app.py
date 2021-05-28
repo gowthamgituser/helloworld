@@ -13,8 +13,8 @@ def palindrome():
     if request.method == 'POST':
         value = request.get_json()
         v1 = value['value']
-        if v1 == []:
-            return ''' <h3>Empty</h3>'''
+        if v1 == "":
+            return '''Array Cannot be empty'''
         else:
             return ''' <h1>vallues</h1>'''
         #for i in range(0, int(len(value) / 2)):
