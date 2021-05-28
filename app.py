@@ -15,6 +15,8 @@ def palindrome():
         value = None
         if request_data:
             if 'value' in request_data:
+                count_not_palindrome = 0
+                count_palindrome = 0
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
                     #return ''' value is: {}'''.format(v1)
@@ -23,8 +25,10 @@ def palindrome():
                         data = v1[j]
                         for i in range(0, int(len(data)/2)):
                             if data[i] != data[len(data) -i - 1]:
-                                return "Not a palindrome"
-                        print('\n'+data+'\n')
+                                count_not_palindrome += 1
+                        count_palindrome += 1
+                if count_palindrome == 0:
+                    return '''No palindrome'''
                 else:
                     return '''Array cannot be empty'''
             #if v1 == []:
