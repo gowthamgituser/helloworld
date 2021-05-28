@@ -6,16 +6,13 @@ app = Flask(__name__)
 def index():
     return "HELLO WORLD"
 
-@app.route('/check-palindrome', methods = ['GET','POST'])
+@app.route('/check-palindrome')
 def palindrome():
-    print("innnnnnn")
-    if request.method == 'GET':
-        print("iffff")
-        value = request.args.get('value')
-        for i in range(0, int(len(value) / 2)):
-            if value[i] != value[len(value) - i - 1]:
-                return "Not a palindrome"
-        return '''palindrome: {}'''.format(value)
+    value = request.args.get('value')
+    for i in range(0, int(len(value) / 2)):
+        if value[i] != value[len(value) - i - 1]:
+            return "Not a palindrome"
+    return '''palindrome: {}'''.format(value)
 
 @app.route('/')
 def check():
