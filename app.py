@@ -1,6 +1,6 @@
 import sys
 
-from flask import Flask, request, session
+from flask import Flask, request, session, render_template
 
 app = Flask(__name__)
 
@@ -44,6 +44,9 @@ def palindrome():
 def get_value():
     return "Total visit: {}".format(session.get('count'))
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('error.html'), 404
 
 @app.route('/')
 def check():
