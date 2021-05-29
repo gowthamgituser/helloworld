@@ -10,14 +10,9 @@ def index():
     return "HELLO WORLD"
 
 
-def session_check():
-    return "Check"
-
-
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
-        index()
         request_data = request.get_json()
         value = None
         if request_data:
@@ -28,7 +23,6 @@ def palindrome():
                     indexes = []
                     for j in range(0, len(v1)):
                         flag = 1
-                        # fact = len(v1)
                         data = v1[j]
                         data = data.lower()
                         for i in range(0, int(len(data) / 2)):
@@ -52,7 +46,10 @@ def get_value():
 
 @app.route('/')
 def check():
-    return "CHECK RUN"
+    if 'count' in session:
+        session['count'] = session.get('count') + 1
+    else:
+        session['count'] = 1
 
 
 if __name__ == '__main__':
