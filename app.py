@@ -22,8 +22,10 @@ def palindrome():
                     data = v1[0]
                     if data == "":
                         return '''value is e'''
+                    elif data == " ":
+                        return '''value is empty'''
                     else:
-                        return '''value {}'''.format(data)
+                        return '''{}'''.format(data)
 
 
 @app.route('/check-count', methods=['GET'])
