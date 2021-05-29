@@ -16,9 +16,8 @@ def session_check():
 
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
-    session_check()
     if request.method == 'POST':
-
+        session_check()
         request_data = request.get_json()
         value = None
         if request_data:
