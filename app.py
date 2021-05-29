@@ -10,7 +10,7 @@ def index():
     return "HELLO WORLD"
 
 
-def countfun():
+def session_check():
     if 'count' in session:
         session['count'] = session.get('count') + 1
     else:
@@ -29,7 +29,7 @@ def palindrome():
                     cnt = 0
                     indexes = []
                     #return ''' value is: {}'''.format(v1)
-                    countfun()
+                    session_check()
                     return ''' value is: {}'''.format(v1)
                     #print('values')
                     for j in range(0, len(v1)):
