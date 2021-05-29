@@ -1,6 +1,6 @@
 import sys
 
-from flask import Flask, render_template, request, session
+from flask import Flask, request, session
 
 app = Flask(__name__)
 
@@ -10,17 +10,12 @@ def index():
     return "HELLO WORLD"
 
 
-def count():
-    if 'count' in session:
-        session['count'] = session.get('count') + 1
-    else:
-        session['count'] = 1
+
 
 
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
-        #count()
         request_data = request.get_json()
         value = None
         if request_data:
@@ -47,6 +42,10 @@ def palindrome():
                         return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
+    if 'count' in session:
+        session['count'] = session.get('count') + 1
+    else:
+        session['count'] = 1
 
 
 @app.route('/check-count', methods=['GET'])
