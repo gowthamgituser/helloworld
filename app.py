@@ -14,34 +14,11 @@ def index():
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
-        request_data = request.get_json()
-        value = None
-        if request_data:
-            if 'value' in request_data:
-                if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
-                    v1 = request_data['value']
-                    v1 = [x.strip() for x in v1]
-                    v1 = [x.rstrip() for x in v1]
-                    cnt = 0
-                    indexes = []
-                    for j in range(0, len(v1)):
-                        flag = 1
-                        # fact = len(v1)
-                        data = v1[j].lower()
-                        if data == "":
-                            return '''Please check the value at index level {}'''
-                        for i in range(0, int(len(data) / 2)):
-                            if data[i] != data[len(data) - i - 1]:
-                                flag = 0
-                        if flag == 1:
-                            cnt += 1
-                            indexes.append(j)
-                    if cnt == 0:
-                        return '''No Palindromes found'''
-                    else:
-                        return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
-                else:
-                    return '''Array cannot be empty'''
+        if 'view' in session:
+            session['view'] = session.get('view') + 1
+        else:
+            session['view'] = 1
+        return '''views count {}'''.format(session.get('view'))
 
 
 # API to get session count
