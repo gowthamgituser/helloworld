@@ -50,6 +50,7 @@ def check():
         session['count'] = session.get('count') + 1
     else:
         session['count'] = 1
+    return "check"
 
 
 if __name__ == '__main__':
