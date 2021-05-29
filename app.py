@@ -25,9 +25,9 @@ def palindrome():
                         flag = 1
                         # fact = len(v1)
                         data = v1[j].lower()
-                        if data == "" and data == " ":
+                        if data == "" or data == " ":
                             return '''Please check the value'''
-                        #data = data.lower()
+                        # data = data.lower()
                         for i in range(0, int(len(data) / 2)):
                             if data[i] != data[len(data) - i - 1]:
                                 flag = 0
@@ -40,10 +40,6 @@ def palindrome():
                         return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
-
-
-
-
 
 
 @app.route('/check-count', methods=['GET'])
