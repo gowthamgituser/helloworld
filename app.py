@@ -23,11 +23,6 @@ def palindrome():
             session['view'] = 1
         return views count {}.format(session.get('view'))'''
     if request.method == 'POST':
-        if 'view' in session:
-            session['view'] = session.get('view') + 1
-        else:
-            session['view'] = 1
-        #return '''views count {}'''.format(session.get('view'))
         request_data = request.get_json()
         value = None
         if request_data:
