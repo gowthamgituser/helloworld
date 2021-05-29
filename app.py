@@ -11,10 +11,11 @@ def index():
 
 
 def session_check():
-    if 'count' in session:
+    return "Check"
+    '''if 'count' in session:
         session['count'] = session.get('count') + 1
     else:
-        session['count'] = 1
+        session['count'] = 1'''
 
 
 @app.route('/check-palindrome', methods=['POST'])
@@ -30,7 +31,7 @@ def palindrome():
                     indexes = []
                     #return ''' value is: {}'''.format(v1)
                     session_check()
-                    return ''' value is: {}'''.format(v1)
+                    #return ''' value is: {}'''.format(v1)
                     #print('values')
                     for j in range(0, len(v1)):
                         flag = 1
