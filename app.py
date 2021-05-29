@@ -18,6 +18,10 @@ def palindrome():
     if request.method == 'POST':
         request_data = request.get_json()
         value = None
+        if 'count' in session:
+            session['count'] = session.get('count') + 1
+        else:
+            session['count'] = 1
         if request_data:
             if 'value' in request_data:
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
@@ -42,10 +46,7 @@ def palindrome():
                         return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
-    if 'count' in session:
-        session['count'] = session.get('count') + 1
-    else:
-        session['count'] = 1
+
 
 
 @app.route('/check-count', methods=['GET'])
