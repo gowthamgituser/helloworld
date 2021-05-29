@@ -10,8 +10,6 @@ def index():
     return "HELLO WORLD"
 
 
-def session_check(data):
-    return '''value {}'''.format(data)
 
 
 
@@ -26,10 +24,7 @@ def palindrome():
                     v1 = request_data['value']
                     cnt = 0
                     indexes = []
-                    #return ''' value is: {}'''.format(v1)
                     session_check(v1[0])
-                    #return ''' value is: {}'''.format(v1)
-                    #print('values')
                     for j in range(0, len(v1)):
                         flag = 1
                         # fact = len(v1)
@@ -48,6 +43,8 @@ def palindrome():
                 else:
                     return '''Array cannot be empty'''
 
+def session_check(data):
+    return '''value {}'''.format(data)
 
 @app.route('/check-count', methods=['GET'])
 def get_value():
