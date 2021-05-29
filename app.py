@@ -44,7 +44,7 @@ def get_value():
     return "Total visit: {}".format(session.get('count'))
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def check():
     if 'count' in session:
         session['count'] = session.get('count') + 1
