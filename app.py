@@ -42,10 +42,6 @@ def palindrome():
 
 @app.route('/check-count', methods=['GET'])
 def get_value():
-    if 'count' in session:
-        session['count'] = session.get('count') + 1
-    else:
-        session['count'] = 1
     return "Total visit: {}".format(session.get('count'))
 
 
