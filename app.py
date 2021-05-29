@@ -1,15 +1,16 @@
-import sys
-
+# packages for the program
 from flask import Flask, request, session, render_template
 
 app = Flask(__name__)
 
 
+# API for hello-world
 @app.route('/hello-world', methods=['GET'])
 def index():
     return "HELLO WORLD"
 
 
+# API to check palindrome
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
@@ -28,7 +29,7 @@ def palindrome():
                         # fact = len(v1)
                         data = v1[j].lower()
                         if data == "":
-                            return '''Please check the value at index {}'''.format(j)
+                            return '''Please check the value at index level {}'''
                         for i in range(0, int(len(data) / 2)):
                             if data[i] != data[len(data) - i - 1]:
                                 flag = 0
@@ -43,16 +44,17 @@ def palindrome():
                     return '''Array cannot be empty'''
 
 
+# API to get session count
 @app.route('/check-count', methods=['GET'])
 def get_value():
     return "Total visit: {}".format(session.get('count'))
 
-
+# Rerouting for invalid url request
 @app.errorhandler(404)
 def not_found(e):
     return render_template('error.html'), 404
 
-
+# Index
 @app.route('/')
 def check():
     return "CHECK RUN"
