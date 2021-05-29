@@ -19,13 +19,31 @@ def palindrome():
             if 'value' in request_data:
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
-                    data = v1[0]
-                    if data == "":
-                        return '''value is e'''
-                    elif data == " ":
-                        return '''value is empty'''
+                    cnt = 0
+                    indexes = []
+                    for j in range(0, len(v1)):
+                        flag = 1
+                        # fact = len(v1)
+                        data = v1[j].lower()
+                        if data == "" and data == " ":
+                            return '''Please check the value'''
+                        #data = data.lower()
+                        for i in range(0, int(len(data) / 2)):
+                            if data[i] != data[len(data) - i - 1]:
+                                flag = 0
+                        if flag == 1:
+                            cnt += 1
+                            indexes.append(j)
+                    if cnt == 0:
+                        return '''No Palindromes found'''
                     else:
-                        return '''{}'''.format(data)
+                        return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
+                else:
+                    return '''Array cannot be empty'''
+
+
+
+
 
 
 @app.route('/check-count', methods=['GET'])
