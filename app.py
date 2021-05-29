@@ -20,8 +20,10 @@ def palindrome():
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
                     data = v1[0]
-                    if data == " ":
-                        return '''value is empty {}'''.format(data)
+                    if data == "":
+                        return '''value is e'''
+                    else:
+                        return '''value {}'''.format(data)
 
 
 @app.route('/check-count', methods=['GET'])
