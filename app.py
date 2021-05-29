@@ -19,14 +19,16 @@ def palindrome():
             if 'value' in request_data:
                 if (type(request_data['value']) == list) and (len(request_data['value']) > 0):
                     v1 = request_data['value']
+                    v1 = [x.strip() for x in v1]
+                    v1 = [x.rstrip() for x in v1]
                     cnt = 0
                     indexes = []
                     for j in range(0, len(v1)):
                         flag = 1
                         # fact = len(v1)
                         data = v1[j].lower()
-                        if data == "" or data == " ":
-                            return '''Please check the value at index {}'''.format(j)
+                        #if data == "" or data == " ":
+                            #return '''Please check the value at index {}'''.format(j)
                         # data = data.lower()
                         for i in range(0, int(len(data) / 2)):
                             if data[i] != data[len(data) - i - 1]:
