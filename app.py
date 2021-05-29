@@ -10,13 +10,15 @@ def index():
     return "HELLO WORLD"
 
 
-
+def session_check():
+    return "Check"
 
 
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
+    session_check()
     if request.method == 'POST':
-        session_check()
+
         request_data = request.get_json()
         value = None
         if request_data:
@@ -43,8 +45,6 @@ def palindrome():
                 else:
                     return '''Array cannot be empty'''
 
-def session_check():
-    return "Check"
 
 @app.route('/check-count', methods=['GET'])
 def get_value():
