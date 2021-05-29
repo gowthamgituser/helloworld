@@ -10,7 +10,6 @@ def index():
     return "HELLO WORLD"
 
 
-
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
@@ -48,7 +47,12 @@ def get_value():
 
 @app.route('/')
 def check():
-    return "CHECK RUN"
+    if 'count' in session:
+        session['count'] = session.get('count') + 1
+    else:
+        session['count'] = 1
+    #print(session.get('count'))
+    return "Total visit: {}".format(session.get('count'))
 
 
 if __name__ == '__main__':
