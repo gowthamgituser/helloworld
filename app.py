@@ -3,7 +3,9 @@ import os
 from flask import Flask, request, session, render_template
 
 app = Flask(__name__)
-app.config['SECRETE_KEY'] = os.getenv('SECRETE_KEY')
+
+
+# app.config['SECRETE_KEY'] = os.getenv('SECRETE_KEY')
 
 # API for hello-world
 @app.route('/hello-world', methods=['GET'])
@@ -12,7 +14,7 @@ def index():
 
 
 # API to check palindrome
-@app.route('/check-palindrome', methods=['POST'])
+@app.route('/check-palindrome', methods=['POST', 'GET'])
 def palindrome():
     if request.method == 'POST':
         if 'view' in session:
@@ -27,10 +29,12 @@ def palindrome():
 def get_value():
     return "Total visit: {}".format(session.get('count'))
 
+
 # Rerouting for invalid url request
 @app.errorhandler(404)
 def not_found(e):
     return render_template('error.html'), 404
+
 
 # Index
 @app.route('/')
@@ -40,7 +44,6 @@ def check():
 
 if __name__ == '__main__':
     app.debug = True
-    #app.secret_key = 'hello super key'
-    #app.secret_key = os.urandom(24)
-
+    app.secret_key = 'hello super key'
+    # app.secret_key = os.urandom(24)
     app.run()
