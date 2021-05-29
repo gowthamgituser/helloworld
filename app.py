@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, session, render_template
 
 app = Flask(__name__)
-
+app.config['SECRETE_KEY'] = os.getenv('SECRETE_KEY')
 
 # API for hello-world
 @app.route('/hello-world', methods=['GET'])
@@ -40,7 +40,7 @@ def check():
 
 if __name__ == '__main__':
     app.debug = True
-    app.secret_key = 'hello super key'
+    #app.secret_key = 'hello super key'
     #app.secret_key = os.urandom(24)
-    app.config['SECRETE_KEY']='super secrete key'
+
     app.run()
