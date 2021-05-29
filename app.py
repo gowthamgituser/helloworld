@@ -28,8 +28,9 @@ def palindrome():
                     v1 = request_data['value']
                     cnt = 0
                     indexes = []
-                    return ''' value is: {}'''.format(v1)
+                    #return ''' value is: {}'''.format(v1)
                     countfun()
+                    return ''' value is: {}'''.format(v1)
                     for j in range(0, len(v1)):
                         flag = 1
                         # fact = len(v1)
