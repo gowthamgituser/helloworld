@@ -1,27 +1,25 @@
 # packages for the program
-import os
 from flask import Flask, request, session, render_template
 
+# Flask app name
 app = Flask(__name__)
 
 
-# app.config['SECRETE_KEY'] = os.getenv('SECRETE_KEY')
-
-# API for hello-world
+# To Check API for hello-world
 @app.route('/hello-world', methods=['GET'])
 def index():
     return "HELLO WORLD"
 
 
-# API to check palindrome
+# To Check API for check palindrome
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
-    '''if request.method == 'POST':
+    """if request.method == 'POST':
         if 'view' in session:
             session['view'] = session.get('view') + 1
         else:
             session['view'] = 1
-        return views count {}.format(session.get('view'))'''
+        return '''views count {}'''.format(session.get('view'))"""
     if request.method == 'POST':
         request_data = request.get_json()
         value = None
@@ -74,5 +72,4 @@ def check():
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = 'hello super key'
-    # app.secret_key = os.urandom(24)
     app.run()
