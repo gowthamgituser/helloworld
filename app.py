@@ -42,4 +42,5 @@ if __name__ == '__main__':
     app.debug = True
     app.secret_key = 'hello super key'
     #app.secret_key = os.urandom(24)
+    app.config['SECRETE_KEY']='super secrete key'
     app.run()
