@@ -71,5 +71,5 @@ def check():
 
 if __name__ == '__main__':
     app.debug = True
-    app.secret_key = 'hell super key'
+    app.secret_key = 'hell0 super key'
     app.run()
