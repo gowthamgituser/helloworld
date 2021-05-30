@@ -45,6 +45,14 @@ def palindrome():
                     return '''Array cannot be empty'''
 
 
+@app.route('/check-palindrome')
+def palindrome():
+    if 'count' in session:
+        session['count'] = session.get('count') + 1
+    else:
+        session['count'] = 1
+
+
 # API to get session count
 @app.route('/check-count', methods=['GET'])
 def get_value():
