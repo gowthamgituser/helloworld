@@ -1,9 +1,10 @@
 # packages for the program
 from flask import Flask, request, session, render_template
+from multiprocessing import Value
 
+counter = Value('i', 0)
 # Flask app name
 app = Flask(__name__)
-
 visit = 0
 
 
@@ -17,6 +18,9 @@ def index():
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
+        with counter.get.lock():
+            counter.value += 1
+
         """if 'count' in session:
             session['count'] = session.get('count') + 1
         else:
@@ -68,7 +72,7 @@ def palindrome():
 @app.route('/check-count', methods=['GET'])
 def get_value():
     # return "Total visit: {}".format(session.get('count'))
-    return "Total visit: {}".format(visit)
+    return "Total visit: {}".format(counter.value)
 
 
 # Rerouting for invalid url request
