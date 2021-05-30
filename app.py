@@ -12,7 +12,7 @@ def index():
 
 
 # To Check API for check palindrome
-@app.route('/check-palindrome', methods=['POST'])
+@app.route('/check-palindrome', methods=['POST', 'GET'])
 def palindrome():
     """if request.method == 'POST':"""
     if 'view' in session:
