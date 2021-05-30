@@ -4,7 +4,7 @@ from flask import Flask, request, session, render_template
 # Flask app name
 app = Flask(__name__)
 
-visit = 0
+visit = 1
 
 
 # To Check API for hello-world
