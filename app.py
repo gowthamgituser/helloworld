@@ -4,6 +4,8 @@ from flask import Flask, request, session, render_template
 # Flask app name
 app = Flask(__name__)
 
+visit = 0
+
 
 # To Check API for hello-world
 @app.route('/hello-world', methods=['GET'])
@@ -11,11 +13,16 @@ def index():
     return "HELLO WORLD"
 
 
-"""
 # To Check API for check palindrome
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
     if request.method == 'POST':
+        """if 'count' in session:
+            session['count'] = session.get('count') + 1
+        else:
+            session['count'] = 1"""
+        global visit
+        visit += 1
         request_data = request.get_json()
         value = None
         if request_data:
@@ -44,9 +51,9 @@ def palindrome():
                         return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
+
+
 """
-
-
 @app.route('/check-palindrome')
 def palindrome():
     if 'count' in session:
@@ -54,12 +61,14 @@ def palindrome():
     else:
         session['count'] = 1
     return '''  '''
+"""
 
 
 # API to get session count
 @app.route('/check-count', methods=['GET'])
 def get_value():
-    return "Total visit: {}".format(session.get('count'))
+    # return "Total visit: {}".format(session.get('count'))
+    return "Total visit: {}".format(visit)
 
 
 # Rerouting for invalid url request
