@@ -15,12 +15,12 @@ def index():
 # To Check API for check palindrome
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
+    global visit
     if request.method == 'POST':
         """if 'count' in session:
             session['count'] = session.get('count') + 1
         else:
             session['count'] = 1"""
-        global visit
         visit += 1
         request_data = request.get_json()
         value = None
