@@ -46,7 +46,7 @@ def palindrome():
 
 
 @app.route('/check-palindrome')
-def palindrome():
+def palindrome_fun():
     if 'count' in session:
         session['count'] = session.get('count') + 1
     else:
