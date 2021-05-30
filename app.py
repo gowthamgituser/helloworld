@@ -11,6 +11,7 @@ def index():
     return "HELLO WORLD"
 
 
+"""
 # To Check API for check palindrome
 @app.route('/check-palindrome', methods=['POST'])
 def palindrome():
@@ -43,10 +44,11 @@ def palindrome():
                         return '''{} Palindrome strings@indexes{}'''.format(cnt, indexes)
                 else:
                     return '''Array cannot be empty'''
+"""
 
 
 @app.route('/check-palindrome')
-def palindrome_fun():
+def palindrome():
     if 'count' in session:
         session['count'] = session.get('count') + 1
     else:
