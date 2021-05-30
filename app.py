@@ -14,7 +14,7 @@ def index():
 # To Check API for check palindrome
 @app.route('/check-palindrome', methods=['POST', 'GET'])
 def palindrome():
-    if request.method == 'GET':
+    if request.method == 'GET' or request.method == 'POST':
         if 'view' in session:
             session['view'] = session.get('view') + 1
         else:
@@ -55,7 +55,7 @@ def palindrome():
 # API to get session count
 @app.route('/check-count', methods=['GET'])
 def get_value():
-    return "Total visit: {}".format(session.get('count'))
+    return "Total visit: {}".format(session.get('view'))
 
 
 # Rerouting for invalid url request
