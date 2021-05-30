@@ -53,6 +53,7 @@ def palindrome():
         session['count'] = session.get('count') + 1
     else:
         session['count'] = 1
+    return '''  '''
 
 
 # API to get session count
