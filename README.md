@@ -1,6 +1,6 @@
 This is all about creating a Flask web server and Deploying in Heroku
 
-Create a Application in Heroku and Name the Application. Connect to github Repository from Heroku.
+Created a Application in Heroku. Connect to github Repository from Heroku.
 
                                         https://flaskpal.herokuapp.com
                                         
