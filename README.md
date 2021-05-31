@@ -7,7 +7,9 @@ Create a Application in Heroku and Name the Application. Connect to github Repos
 
 HOST YOUR CODE IN github from Git Version Control software
 
-Create different API's for        1) Basic checks, 
+Create different API's for        
+
+                                  1) Basic checks, 
                                     https://flaskpal.herokuapp.com/
                                     
                                   2) API call Method - GET - /hello-world
