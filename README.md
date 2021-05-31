@@ -22,3 +22,11 @@ Create different API's for
                                     https://flaskpal.herokuapp.com/check-count
 
 Error handled for incorrect url.
+
+Using POSTMAN to check the above api call-
+                                Method - GET- https://flaskpal.herokuapp.com/hello-world
+                                Method - POST https://flaskpal.herokuapp.com/check-palindrome
+                                               POST BODY - jason format 
+                                               {
+	                                                "value":["Time","a","malam"]
+                                                }
