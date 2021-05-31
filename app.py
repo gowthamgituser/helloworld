@@ -37,7 +37,7 @@ def palindrome():
                         # fact = len(v1)
                         data = v1[j].lower()
                         if data == "":
-                            return '''Please check the value at index level'''
+                            return '''Please check the value at index level.'''
                         for i in range(0, int(len(data) / 2)):
                             if data[i] != data[len(data) - i - 1]:
                                 flag = 0
@@ -84,5 +84,5 @@ def check():
 
 if __name__ == '__main__':
     app.debug = True
-    app.secret_key = 'hell0 super key'
+    app.secret_key = 'hello super key'
     app.run()
