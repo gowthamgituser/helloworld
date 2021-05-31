@@ -24,8 +24,10 @@ Create different API's for
 Error handled for incorrect url.
 
 Using POSTMAN to check the above api call-
-                                Method - GET- https://flaskpal.herokuapp.com/hello-world
-                                Method - POST https://flaskpal.herokuapp.com/check-palindrome
+
+                                1) Method - GET- https://flaskpal.herokuapp.com/hello-world
+                                
+				2) Method - POST https://flaskpal.herokuapp.com/check-palindrome
                                                POST BODY - jason format 
                                                {
 	                                                "value":["Time","a","malam"]
