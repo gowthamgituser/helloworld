@@ -9,6 +9,9 @@ visit = 0
 # To Check API for hello-world
 @app.route('/hello-world', methods=['GET'])
 def index():
+    '''
+    This is an API with the request method as GET to call /hello-world
+    '''
     return "HELLO WORLD"
 
 
