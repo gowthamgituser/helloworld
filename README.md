@@ -28,7 +28,7 @@ Using POSTMAN to check the above api call-
                                 1) Method - GET- https://flaskpal.herokuapp.com/hello-world
                                 
 				2) Method - POST https://flaskpal.herokuapp.com/check-palindrome
-                                               POST BODY - jason format 
+                                               POST BODY - json format 
                                                {
 	                                                "value":["Time","a","malam"]
                                                 }
